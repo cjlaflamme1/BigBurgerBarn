@@ -14,3 +14,5 @@ const burger = {
         return DAL.delete("burgers", condition);
     }
 }
+
+module.exports = burger;

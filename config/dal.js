@@ -31,7 +31,7 @@ class DAL {
     }
 
     updateOne(table, newValues, condition) {
-        const queryString = `UPDATE ${table} SET ${newValues} WHERE ${condition}`;
+        const queryString = `UPDATE ${table} SET {${newValues}} WHERE ${condition}`;
         console.log(queryString);
         return this.query(queryString);
     }
