@@ -44,4 +44,4 @@ class DAL {
 }
 
 
-module.exports = DAL;
+module.exports = new DAL(connection);

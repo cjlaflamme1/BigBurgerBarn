@@ -1,4 +1,4 @@
-const DAL = require('../config/dbManager');
+const DAL = require('../config/dal');
 
 const burger = {
     selectAll: function() {
