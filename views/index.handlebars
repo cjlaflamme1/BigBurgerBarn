@@ -2,16 +2,6 @@
 {{!-- Don't forget a button that will submit user input --}}
 
 <h1>Welcome to the Big Burger Barn!</h1>
-
-
-<section class="createdBurgers">
-    <h2>Burgers are ready!</h2>
-</section>
-
-<section class="devouredBurgers">
-    <h2>Devoured Burgers</h2>
-</section>
-
 <h3>Order your burgers here!</h3>
 <form class="create-form">
 
@@ -20,3 +10,23 @@
         <input type="text" id="burgerOrder" name="burgerOrder">
     </div>
 </form>
+
+
+<section class="createdBurgers">
+    <h2>Burgers are ready!</h2>
+    <ul>
+        {{#each burgers}}
+            {{#unless devoured}}
+                <li>
+                    {{burger_name}}
+
+                    <button class="devourButton" data-id="{{this.id}}">Devour</button>
+                </li>
+            {{/unless}}
+        {{/each}}
+    </ul>
+</section>
+
+<section class="devouredBurgers">
+    <h2>Devoured Burgers</h2>
+</section>

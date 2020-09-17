@@ -4,9 +4,9 @@ const burger = require('../models/burger');
 
 router.get('/', async function(req, res) {
     try {
-        const burgers = await burger.selectAll();
-        console.log(burgers);
-        res.render("index", burgers);
+        const hbsObject = {burgers: await burger.selectAll()};
+        console.log(hbsObject);
+        res.render("index", hbsObject);
     } 
     catch(err) {
         res.status(500).json(err);

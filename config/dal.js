@@ -20,7 +20,9 @@ class DAL {
 
     
     selectAll(table) {
-        return this.query(`SELECT * FROM ${table}`);
+        console.log('This is the dal running')
+        return this.query(`SELECT * FROM ${table};`);
+        
     }
 
 
