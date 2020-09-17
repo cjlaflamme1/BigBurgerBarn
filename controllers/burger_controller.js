@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const burger = require('../models/burger');
 
-router.get('/api/all', async function(req, res) {
+router.get('/', async function(req, res) {
     try {
         const burgers = await burger.selectAll();
         console.log(burgers);
