@@ -1,0 +1,11 @@
+
+
+body.hero-image {
+    background-image: url('../img/barnBackground.jpg');
+    background-repeat: no-repeat;
+    background-color: crimson;
+    height: 100%;
+    width: auto;
+    background-position: center;
+    background-size: cover;
+}

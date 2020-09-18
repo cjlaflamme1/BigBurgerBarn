@@ -1,44 +1,64 @@
 {{!-- this will render into main --}}
 {{!-- Don't forget a button that will submit user input --}}
 
-<h1>Welcome to the Big Burger Barn!</h1>
-<h3>Order your burgers here!</h3>
-<form class="create-form">
-
-    <div class="form-group">
-        <label for="burgerOrder">What would you like to order?</label>
-        <input type="text" id="burgerOrder" name="burgerOrder">
-        <button type="submit" class="newBurgerButton" name="burgerOrder">Submit Order</button>
+<section class="title">
+    <h1 class="center-align">Welcome to the Big Burger Barn!</h1>
+    <h3 class="center-align">Order your burgers here!</h3>
+</section>
+<section class="row">
+    <div class="col m3"></div>
+    <div class="col s12 m6">
+        <div class="card">
+            <div class="card-content">
+                <form class="create-form">
+                    <div class="form-group">
+                        <label for="burgerOrder">What would you like to order?</label>
+                        <input type="text" id="burgerOrder" name="burgerOrder">
+                        <button type="submit" class="newBurgerButton" name="burgerOrder">Submit Order</button>
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
-</form>
-
-
-<section class="createdBurgers">
-    <h2>Burgers are ready!</h2>
-    <ul>
-        {{#each burgers}}
-            {{#unless devoured}}
-                <li>
-                    {{burger_name}}
-
-                    <button class="devourButton" data-id="{{this.id}}">Devour</button>
-                </li>
-            {{/unless}}
-        {{/each}}
-    </ul>
+    <div class="col m3"></div>
 </section>
 
-<section class="devouredBurgers">
-    <h2>Devoured Burgers</h2>
-    <ul>
-        {{#each burgers}}
-            {{#if devoured}}
-                <li>
-                    {{burger_name}}
+<div class="row">
+    <section class="createdBurgers col s12 m6">
+        <div class="card">
+            <div class="card-content">
+                <h2>Burgers are ready!</h2>
+                <ul>
+                    {{#each burgers}}
+                    {{#unless devoured}}
+                    <li>
+                        {{burger_name}}
 
-                    <button class="deleteButton" data-id="{{this.id}}">Delete</button>
-                </li>
-            {{/if}}
-        {{/each}}
-    </ul>    
-</section>
+                        <button class="devourButton" data-id="{{this.id}}">Devour</button>
+                    </li>
+                    {{/unless}}
+                    {{/each}}
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="devouredBurgers col s12 m6">
+        <div class="card">
+            <div class="card-content">
+                <h2>Devoured Burgers</h2>
+                <ul>
+                    {{#each burgers}}
+                    {{#if devoured}}
+                    <li>
+                        {{burger_name}}
+
+                        <button class="deleteButton" data-id="{{this.id}}">Delete</button>
+                    </li>
+                    {{/if}}
+                    {{/each}}
+                </ul>
+            </div>
+        </div>
+    </section>
+</div>
