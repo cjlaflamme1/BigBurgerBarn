@@ -29,7 +29,7 @@ router.put('/api/burgers/:id', async function(req, res) {
     try {
         const id = `id = ${req.params.id}`;
         console.log(`You selected ${id}`);
-        const updatedBurger = await burger.updateOne(`devoured: ${req.body.devoured}`, id);
+        const updatedBurger = await burger.updateOne(`devoured= ${req.body.devoured}`, id);
         if(updatedBurger.changedRows === 0) {
             return res.status(404).end();
         } else {

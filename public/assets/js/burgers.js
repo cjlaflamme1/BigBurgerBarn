@@ -13,6 +13,20 @@ $( document ).ready(function() {
         });
     });
 
+    $('.devourButton').on('click', function(event) {
+        // event.preventDefault();
+        const id = $(this).data('id');
 
+        $.ajax(`/api/burgers/${id}`, {
+            type: "PUT", 
+            data: {
+                devoured: 1
+            }
+        }).then((data) => {
+            console.log(data);
+            console.log(`Devoured that thing!!!`);
+            location.reload();
+        });
+    });
 
 })

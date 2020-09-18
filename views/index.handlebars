@@ -30,4 +30,15 @@
 
 <section class="devouredBurgers">
     <h2>Devoured Burgers</h2>
+    <ul>
+        {{#each burgers}}
+            {{#if devoured}}
+                <li>
+                    {{burger_name}}
+
+                    <button class="devourButton" data-id="{{this.id}}">Devour</button>
+                </li>
+            {{/if}}
+        {{/each}}
+    </ul>    
 </section>
