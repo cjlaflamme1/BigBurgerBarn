@@ -1,5 +1,6 @@
 $( document ).ready(function() {
 
+    // This creates new burgers
     $('.create-form').on('submit', function(event) {
         event.preventDefault();
         const newBurger = {
