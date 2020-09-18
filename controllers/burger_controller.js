@@ -14,9 +14,10 @@ router.get('/', async function(req, res) {
 });
 
 router.post('/api/burgers', async function(req, res) {
+    console.log(req.body);
     try {
-        const {column, value} = req.body;
-        const newBurger = await burger.insertOne(column, value);
+        const {name} = req.body;
+        const newBurger = await burger.insertOne(name);
         console.log(newBurger);
         res.json({id: newBurger.id})
     } catch (err) {
