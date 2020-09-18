@@ -13,6 +13,8 @@ $( document ).ready(function() {
         });
     });
 
+
+    // This "Devours" the burgers
     $('.devourButton').on('click', function(event) {
         // event.preventDefault();
         const id = $(this).data('id');
@@ -29,4 +31,17 @@ $( document ).ready(function() {
         });
     });
 
+    $('.deleteButton').on('click', function(event) {
+        // event.preventDefault();
+        const id = $(this).data('id');
+
+        $.ajax(`/api/burgers/${id}`, {
+            type: "DELETE", 
+        }).then((data) => {
+            console.log(data);
+            console.log(`Deleted that thing!!!`);
+            location.reload();
+        });
+    });
+    
 })
