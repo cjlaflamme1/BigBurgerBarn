@@ -20,7 +20,6 @@ class DAL {
 
     
     selectAll(table) {
-        console.log('This is the dal running')
         return this.query(`SELECT * FROM ${table};`);
         
     }
@@ -28,13 +27,11 @@ class DAL {
 
     insertOne(table, column, burgerName) {
         const queryString = `INSERT INTO ${table} (${column}) VALUES ( ? )`;
-        console.log(queryString);
         return this.query(queryString, burgerName);
     }
 
     updateOne(table, newValues, condition) {
         const queryString = `UPDATE ${table} SET ${newValues} WHERE ${condition}`;
-        console.log(queryString);
         return this.query(queryString);
     }
 

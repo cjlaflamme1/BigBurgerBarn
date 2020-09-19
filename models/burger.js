@@ -2,7 +2,6 @@ const DAL = require('../config/dal');
 
 const burger = {
     selectAll: function() {
-        console.log('burger.selectAll is running');
         return DAL.selectAll("burgers");
     }, 
     insertOne: function(value) {

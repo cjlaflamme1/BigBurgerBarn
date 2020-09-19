@@ -5,7 +5,6 @@ const burger = require('../models/burger');
 router.get('/', async function(req, res) {
     try {
         const hbsObject = {burgers: await burger.selectAll()};
-        console.log(hbsObject);
         res.render("index", hbsObject);
     } 
     catch(err) {
@@ -18,7 +17,6 @@ router.post('/api/burgers', async function(req, res) {
     try {
         const {name} = req.body;
         const newBurger = await burger.insertOne(name);
-        console.log(newBurger);
         res.json({id: newBurger.id})
     } catch (err) {
         res.status(500).json(err);
@@ -28,7 +26,6 @@ router.post('/api/burgers', async function(req, res) {
 router.put('/api/burgers/:id', async function(req, res) {
     try {
         const id = `id = ${req.params.id}`;
-        console.log(`You selected ${id}`);
         const updatedBurger = await burger.updateOne(`devoured= ${req.body.devoured}`, id);
         if(updatedBurger.changedRows === 0) {
             return res.status(404).end();
