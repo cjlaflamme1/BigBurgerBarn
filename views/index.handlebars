@@ -12,7 +12,7 @@
             <div class="card-content">
                 <form class="create-form">
                     <div class="form-group">
-                        <label for="burgerOrder">What would you like to order?</label>
+                        <label class="burgerOrder" for="burgerOrder">What would you like to order?</label>
                         <input type="text" id="burgerOrder" name="burgerOrder">
                         <button type="submit" class="newBurgerButton" name="burgerOrder">Submit Order</button>
                     </div>
@@ -31,8 +31,8 @@
                 <ul>
                     {{#each burgers}}
                     {{#unless devoured}}
-                    <li>
-                        {{burger_name}}
+                    <li class="burger">
+                        <i class="fas fa-hamburger"></i>{{burger_name}}
 
                         <button class="devourButton" data-id="{{this.id}}">Devour</button>
                     </li>
@@ -50,8 +50,8 @@
                 <ul>
                     {{#each burgers}}
                     {{#if devoured}}
-                    <li>
-                        {{burger_name}}
+                    <li class="burger">
+                        <i class="fas fa-hamburger"></i>{{burger_name}}
 
                         <button class="deleteButton" data-id="{{this.id}}">Delete</button>
                     </li>

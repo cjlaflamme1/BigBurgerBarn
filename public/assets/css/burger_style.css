@@ -1,4 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Ranchers&display=swap');
 
+* {
+    font-family: 'Ranchers', cursive, sans-serif;
+}
 
 body.hero-image {
     background-image: url('../img/barnBackground.jpg');
@@ -8,4 +12,21 @@ body.hero-image {
     width: auto;
     background-position: center;
     background-size: cover;
+}
+
+.card {
+    background-color: rgba(236, 233, 233, 0.75);
+}
+
+label.burgerOrder {
+    color: black;
+    font-size: 25px;
+}
+
+h2 {
+    margin-top: 0px;
+}
+
+li.burger {
+    font-size: 25px;
 }
